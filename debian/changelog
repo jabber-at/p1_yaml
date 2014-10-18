@@ -1,0 +1,17 @@
+erlang-p1-yaml (0.2014.06.11-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.2014.06.11
+
+ -- Philipp Huebner <debalance@debian.org>  Thu, 10 Jul 2014 17:48:43 +0200
+
+erlang-p1-yaml (0.2013.12.09-2) unstable; urgency=medium
+
+  * Added correct Erlang dependencies
+
+ -- Philipp Huebner <debalance@debian.org>  Sat, 10 May 2014 12:56:15 +0200
+
+erlang-p1-yaml (0.2013.12.09-1) unstable; urgency=low
+
+  * Initial release, see #744885 for background
+
+ -- Philipp Huebner <debalance@debian.org>  Wed, 16 Apr 2014 18:34:06 +0200
