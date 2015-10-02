@@ -1,3 +1,11 @@
+erlang-p1-yaml (0.2015.09.25-0.1local) unstable; urgency=medium
+
+  * Imported Upstream version 0.2015.09.25.
+  * Name me as the maintainer.
+  * Add VCS-* fields in debian/control.
+
+ -- Mathias Ertl <mati@jabber.at>  Fri, 02 Oct 2015 19:00:06 +0200
+
 erlang-p1-yaml (0.2014.06.11-1) unstable; urgency=medium
 
   * Imported Upstream version 0.2014.06.11
