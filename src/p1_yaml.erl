@@ -1,11 +1,29 @@
-%%%-------------------------------------------------------------------
-%%% @author Evgeniy Khramtsov <>
-%%% @copyright (C) 2013, Evgeniy Khramtsov
-%%% @doc
+%%%----------------------------------------------------------------------
+%%% File    : p1_yaml.erl
+%%% Author  : Evgeniy Khramtsov <ekhramtsov@process-one.net>
+%%% Purpose : YAML parser
+%%% Created : 7 Aug 2013 by Evgeniy Khramtsov <ekhramtsov@process-one.net>
 %%%
-%%% @end
-%%% Created :  7 Aug 2013 by Evgeniy Khramtsov <>
-%%%-------------------------------------------------------------------
+%%%
+%%% p1_yaml, Copyright (C) 2002-2015   ProcessOne
+%%%
+%%% This program is free software; you can redistribute it and/or
+%%% modify it under the terms of the GNU General Public License as
+%%% published by the Free Software Foundation; either version 2 of the
+%%% License, or (at your option) any later version.
+%%%
+%%% This program is distributed in the hope that it will be useful,
+%%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+%%% General Public License for more details.
+%%%
+%%% You should have received a copy of the GNU General Public License
+%%% along with this program; if not, write to the Free Software
+%%% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+%%% 02111-1307 USA
+%%%
+%%%----------------------------------------------------------------------
+
 -module(p1_yaml).
 
 %% API
@@ -121,9 +139,15 @@ encode_pair({K, V}, N) ->
 %%% Internal functions
 %%%===================================================================
 get_so_path() ->
-    EbinDir = filename:dirname(code:which(?MODULE)),
-    AppDir = filename:dirname(EbinDir),
-    filename:join([AppDir, "priv", "lib"]).
+    PrivDir = case code:priv_dir(p1_yaml) of
+                  {error, _} ->
+                      EbinDir = filename:dirname(code:which(?MODULE)),
+                      AppDir = filename:dirname(EbinDir),
+                      filename:join([AppDir, "priv"]);
+                  V ->
+                      V
+              end,
+    filename:join([PrivDir, "lib"]).
 
 make_flags([{plain_as_atom, true}|Opts]) ->
     ?PLAIN_AS_ATOM bor make_flags(Opts);
@@ -151,7 +175,7 @@ indent(N) ->
 -include_lib("eunit/include/eunit.hrl").
 
 load_nif_test() ->
-    ?assertEqual(ok, load_nif(filename:join(["..", "priv", "lib"]))).
+    ?assertEqual(ok, load_nif()).
 
 decode_test1_test() ->
     FileName = filename:join(["..", "test", "test1.yml"]),

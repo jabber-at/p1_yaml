@@ -1,11 +1,11 @@
-# P1 YAML
+# P1 YAML [![Build Status](https://travis-ci.org/processone/p1_yaml.svg?branch=master)](https://travis-ci.org/processone/p1_yaml)
 
 P1 YAML is an Erlang wrapper for [libyaml](http://pyyaml.org/wiki/LibYAML) "C" library.
 
 ## Installation
 
-> $ ./configure
-> $ make
+    $ ./configure
+    $ make
 
 ## Example usage
 
