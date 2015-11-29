@@ -2,6 +2,7 @@ erlang-p1-yaml (0.2015.10.07-0.1local) unstable; urgency=medium
 
   * Imported Upstream version 0.2015.10.07.
   * Add erlang-p1-utils as build dependency.
+  * Add patch to let rebar not fetch compile time dependencies.
 
  -- Mathias Ertl <mati@jabber.at>  Sun, 29 Nov 2015 18:43:39 +0100
 
