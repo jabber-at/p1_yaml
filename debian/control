@@ -1,6 +1,6 @@
 Source: erlang-p1-yaml
 Priority: optional
-Maintainer: Philipp Huebner <debalance@debian.org>
+Maintainer: Mathias Ertl <mati@jabber.at>
 Build-Depends: debhelper (>= 9), dh-rebar, libyaml-dev, erlang-p1-utils
 Standards-Version: 3.9.5
 Section: libs
