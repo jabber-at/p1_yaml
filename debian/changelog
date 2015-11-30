@@ -1,4 +1,4 @@
-erlang-p1-yaml (0.2015.10.07-0.1local) unstable; urgency=medium
+erlang-p1-yaml (0.2015.10.07-0.1) unstable; urgency=medium
 
   * Imported Upstream version 0.2015.10.07.
   * Add erlang-p1-utils as build dependency.
