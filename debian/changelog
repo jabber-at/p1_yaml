@@ -4,8 +4,9 @@ erlang-p1-yaml (0.2015.10.07-0.1) unstable; urgency=medium
   * Add erlang-p1-utils as build dependency.
   * Add patch to let rebar not fetch compile time dependencies.
   * Name me as the maintainer.
+  * Add XSBC-Orig-Maintainer field.
 
- -- Mathias Ertl <mati@jabber.at>  Sun, 29 Nov 2015 18:43:39 +0100
+ -- Mathias Ertl <mati@jabber.at>  Tue, 01 Dec 2015 20:29:34 +0100
 
 erlang-p1-yaml (0.2015.09.25-0.1local) unstable; urgency=medium
 
