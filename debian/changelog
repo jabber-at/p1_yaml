@@ -5,6 +5,7 @@ erlang-p1-yaml (1.0.0-0.1) unstable; urgency=medium
     hence the versioning has changed.
   * Use upstream tags for source packages.
   * Add missing lintian override for unknown-field-in-dsc orig-maintainer.
+  * Fix missing short license paragraph in debian/copyright.
 
  -- Mathias Ertl <mati@jabber.at>  Fri, 15 Jan 2016 22:12:08 +0100
 
