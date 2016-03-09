@@ -1,30 +1,27 @@
 %%%----------------------------------------------------------------------
-%%% File    : p1_yaml.erl
+%%% File    : fast_yaml.erl
 %%% Author  : Evgeniy Khramtsov <ekhramtsov@process-one.net>
 %%% Purpose : YAML parser
 %%% Created : 7 Aug 2013 by Evgeniy Khramtsov <ekhramtsov@process-one.net>
 %%%
 %%%
-%%% p1_yaml, Copyright (C) 2002-2015   ProcessOne
+%%% Copyright (C) 2002-2016 ProcessOne, SARL. All Rights Reserved.
 %%%
-%%% This program is free software; you can redistribute it and/or
-%%% modify it under the terms of the GNU General Public License as
-%%% published by the Free Software Foundation; either version 2 of the
-%%% License, or (at your option) any later version.
+%%% Licensed under the Apache License, Version 2.0 (the "License");
+%%% you may not use this file except in compliance with the License.
+%%% You may obtain a copy of the License at
 %%%
-%%% This program is distributed in the hope that it will be useful,
-%%% but WITHOUT ANY WARRANTY; without even the implied warranty of
-%%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-%%% General Public License for more details.
+%%%     http://www.apache.org/licenses/LICENSE-2.0
 %%%
-%%% You should have received a copy of the GNU General Public License
-%%% along with this program; if not, write to the Free Software
-%%% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
-%%% 02111-1307 USA
+%%% Unless required by applicable law or agreed to in writing, software
+%%% distributed under the License is distributed on an "AS IS" BASIS,
+%%% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+%%% See the License for the specific language governing permissions and
+%%% limitations under the License.
 %%%
 %%%----------------------------------------------------------------------
 
--module(p1_yaml).
+-module(fast_yaml).
 
 %% API
 -export([load_nif/0, decode/1, decode/2, start/0, stop/0,
@@ -43,18 +40,18 @@
 %%% API
 %%%===================================================================
 start() ->
-    application:start(p1_yaml).
+    application:start(fast_yaml).
 
 stop() ->
-    application:stop(p1_yaml).
+    application:stop(fast_yaml).
 
 load_nif() ->
-    SOPath = p1_nif_utils:get_so_path(?MODULE, [p1_yaml], "p1_yaml"),
+    SOPath = p1_nif_utils:get_so_path(?MODULE, [fast_yaml], "fast_yaml"),
     case catch erlang:load_nif(SOPath, 0) of
         ok ->
             ok;
         Err ->
-            error_logger:warning_msg("unable to load p1_yaml NIF: ~p~n", [Err]),
+            error_logger:warning_msg("unable to load fast_yaml NIF: ~p~n", [Err]),
             Err
     end.
 
@@ -143,13 +140,13 @@ make_flags([{plain_as_atom, false}|Opts]) ->
 make_flags([plain_as_atom|Opts]) ->
     ?PLAIN_AS_ATOM bor make_flags(Opts);
 make_flags([Opt|Opts]) ->
-    error_logger:warning_msg("p1_yaml: unknown option ~p", [Opt]),
+    error_logger:warning_msg("fast_yaml: unknown option ~p", [Opt]),
     make_flags(Opts);
 make_flags([]) ->
     0.
 
 nif_decode(_Data, _Flags) ->
-    error_logger:error_msg("p1_yaml NIF not loaded", []),
+    error_logger:error_msg("fast_yaml NIF not loaded", []),
     erlang:nif_error(nif_not_loaded).
 
 indent(N) ->
