@@ -1,0 +1,17 @@
+Description: remove deps in rebar.config
+ Without this patch, rebar would download and compile the listed deps
+ at compile time.
+Author: Philipp Huebner <debalance@debian.org>
+
+Index: erlang-p1-yaml/rebar.config
+===================================================================
+--- erlang-p1-yaml.orig/rebar.config
++++ erlang-p1-yaml/rebar.config
+@@ -24,7 +24,6 @@
+ {port_env, [{"CFLAGS", "$CFLAGS"}, {"LDFLAGS", "$LDFLAGS"}]}.
+ {port_specs, [{"priv/lib/fast_yaml.so", ["c_src/fast_yaml.c"]}]}.
+ 
+-{deps, [{p1_utils, ".*", {git, "git://github.com/processone/p1_utils", {tag, "1.0.3"}}}]}.
+ 
+ {clean_files, ["c_src/fast_yaml.gcda", "c_src/fast_yaml.gcno"]}.
+ 
