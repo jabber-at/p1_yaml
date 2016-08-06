@@ -1,3 +1,11 @@
+# Version 1.0.5
+
+* Fix compilation on rebar3 (Paweł Chmielowski)
+
+# Version 1.0.4
+
+* Update to p1_utils 1.0.4 (Mickaël Rémond)
+
 # Version 1.0.3
 
 * Improve error message on syntax error (Evgeny Khramtsov)
