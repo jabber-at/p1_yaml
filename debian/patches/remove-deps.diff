@@ -3,15 +3,13 @@ Description: remove deps in rebar.config
  at compile time.
 Author: Philipp Huebner <debalance@debian.org>
 
-Index: erlang-p1-yaml/rebar.config
-===================================================================
---- erlang-p1-yaml.orig/rebar.config
-+++ erlang-p1-yaml/rebar.config
+--- a/rebar.config
++++ b/rebar.config
 @@ -24,7 +24,6 @@
  {port_env, [{"CFLAGS", "$CFLAGS"}, {"LDFLAGS", "$LDFLAGS"}]}.
  {port_specs, [{"priv/lib/fast_yaml.so", ["c_src/fast_yaml.c"]}]}.
  
--{deps, [{p1_utils, ".*", {git, "git://github.com/processone/p1_utils", {tag, "1.0.3"}}}]}.
+-{deps, [{p1_utils, ".*", {git, "git://github.com/processone/p1_utils", {tag, "1.0.4"}}}]}.
  
  {clean_files, ["c_src/fast_yaml.gcda", "c_src/fast_yaml.gcno"]}.
  
