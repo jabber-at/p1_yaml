@@ -5,7 +5,7 @@
 %%% Created : 7 Aug 2013 by Evgeniy Khramtsov <ekhramtsov@process-one.net>
 %%%
 %%%
-%%% Copyright (C) 2002-2016 ProcessOne, SARL. All Rights Reserved.
+%%% Copyright (C) 2002-2017 ProcessOne, SARL. All Rights Reserved.
 %%%
 %%% Licensed under the Apache License, Version 2.0 (the "License");
 %%% you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@
 %%%----------------------------------------------------------------------
 
 -module(fast_yaml).
+
+-compile(no_native).
 
 %% API
 -export([load_nif/0, decode/1, decode/2, start/0, stop/0,
@@ -47,6 +49,9 @@ stop() ->
 
 load_nif() ->
     SOPath = p1_nif_utils:get_so_path(?MODULE, [fast_yaml], "fast_yaml"),
+    load_nif(SOPath).
+
+load_nif(SOPath) ->
     case catch erlang:load_nif(SOPath, 0) of
         ok ->
             ok;
@@ -159,7 +164,8 @@ indent(N) ->
 -include_lib("eunit/include/eunit.hrl").
 
 load_nif_test() ->
-    ?assertEqual(ok, load_nif()).
+    SOPath = p1_nif_utils:get_so_path(?MODULE, [], "fast_yaml"),
+    ?assertEqual(ok, load_nif(SOPath)).
 
 decode_test1_test() ->
     FileName = filename:join(["..", "test", "test1.yml"]),
