@@ -1,3 +1,9 @@
+erlang-p1-yaml (1.0.9-0.1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Mathias Ertl <mati@jabber.at>  Sun, 26 Mar 2017 21:47:32 +0200
+
 erlang-p1-yaml (1.0.8-0.1) unstable; urgency=medium
 
   * New upstream release.
