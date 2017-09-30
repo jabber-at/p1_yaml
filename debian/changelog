@@ -1,6 +1,7 @@
 erlang-p1-yaml (1.0.11-0.1) unstable; urgency=medium
 
   * New upstream release.
+  * Update watch file.
 
  -- Mathias Ertl <mati@jabber.at>  Sat, 30 Sep 2017 13:16:21 +0200
 
