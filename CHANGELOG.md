@@ -1,3 +1,8 @@
+# Version 1.0.11
+
+* Updating p1_utils to version 1.0.10.
+* Improved error formatting
+
 # Version 1.0.10
 
 * depends on p1_utils-1.0.9
