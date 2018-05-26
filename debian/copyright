@@ -1,11 +1,11 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: fast_yaml
 Source: https://github.com/processone/fast_yaml
 
 Files: *
-Copyright: 2013-2017 ProcessOne
-           2013-2017 Evgeniy Khramtsov <ekhramtsov@process-one.net>
-           2015-2017 Mickael Remond <mremond@process-one.net>
+Copyright: 2013-2018 ProcessOne
+           2013-2018 Evgeniy Khramtsov <ekhramtsov@process-one.net>
+           2015-2018 Mickael Remond <mremond@process-one.net>
 License: Apache-2.0
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ License: FSF
  gives unlimited permission to copy, distribute and modify it.
 
 Files: debian/*
-Copyright: 2014-2017 Philipp Huebner <debalance@debian.org>
-           2014-2017 Mathias Ertl <mati@jabber.at>
+Copyright: 2014-2018 Philipp Huebner <debalance@debian.org>
+           2014-2018 Mathias Ertl <mati@jabber.at>
 License: GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
