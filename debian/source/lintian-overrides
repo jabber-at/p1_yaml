@@ -1,4 +1,4 @@
 erlang-p1-yaml source: debian-watch-does-not-check-gpg-signature
-erlang-p1-yaml source: testsuite-autopkgtest-missing
 erlang-p1-yaml source: maintainer-upload-has-incorrect-version-number
+erlang-p1-yaml source: testsuite-autopkgtest-missing
 erlang-p1-yaml source: unknown-field-in-dsc orig-maintainer
