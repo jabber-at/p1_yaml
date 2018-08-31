@@ -3,8 +3,9 @@ erlang-p1-yaml (1.0.15-0.1) unstable; urgency=medium
   * New upstream version 1.0.15
   * Switched to debhelper 11
   * Added debian/upstream/metadata
-  * Name Ejabberd Packaging Team <ejabberd@packages.debian.org> as
-    Orig-Maintainer.
+  * Set Orig-Maintainer: Ejabberd Packaging Team
+    <ejabberd@packages.debian.org>
+  * (Build-)Depend on erlang-base (>= 1:19.2)
 
  -- Mathias Ertl <mati@jabber.at>  Mon, 27 Aug 2018 11:11:23 +0200
 
